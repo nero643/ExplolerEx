@@ -7,14 +7,34 @@
         xmlns:WindowsAPICodePackShell="clr-namespace:Microsoft.WindowsAPICodePack.Shell;assembly=Microsoft.WindowsAPICodePack.Shell"
         xmlns:local="clr-namespace:ExplolerEx"
         mc:Ignorable="d"
+        xmlns:vm="clr-namespace:ExplolerEx.ViewModels"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
         Title="MainWindow" Height="350" Width="525">
 
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
 
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closed">
+            <l:DataContextDisposeAction/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    
     <Grid>
         <!-- The Explorer Browser -->
         <WindowsAPICodePackPresentation:ExplorerBrowser
-            x:Name="eb"
-        />
+            Content="{Binding Exp}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Loaded">
+                    <l:LivetCallMethodAction MethodTarget="{Binding}" MethodName="InitialLoad"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </WindowsAPICodePackPresentation:ExplorerBrowser>
+            
+            
+        
 
     </Grid>
 </Window>

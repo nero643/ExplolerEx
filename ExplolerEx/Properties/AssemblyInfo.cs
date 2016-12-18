@@ -1,6 +1,8 @@
-﻿using System.Reflection;
-using System.Resources;
-using System.Runtime.CompilerServices;
+﻿// <copyright file="AssemblyInfo.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
 
@@ -29,7 +31,6 @@ using System.Windows;
 //プロジェクト ファイルの UICulture 設定と一致するよう更新します。
 
 //[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
-
 
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None, //テーマ固有のリソース ディクショナリが置かれている場所
